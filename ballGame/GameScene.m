@@ -45,16 +45,19 @@
                 universalBall.physicsBody.restitution = 0;
                 universalBall.physicsBody.linearDamping = 0.2;
                 universalBall.physicsBody.friction = 1.0;
+                universalBall.physicsBody.mass = 1;
                 break;
             case 1:
                 universalBall.physicsBody.restitution = 0.7;
                 universalBall.physicsBody.linearDamping = 0.1;
                 universalBall.physicsBody.friction = 0.5;
+                universalBall.physicsBody.mass = 0.1;
                 break;
             case 2:
                 universalBall.physicsBody.restitution = 0.9;
                 universalBall.physicsBody.linearDamping = 0.1;
                 universalBall.physicsBody.friction = 0.5;
+                universalBall.physicsBody.mass = 0.3;
                 break;
             default:
                 break;
@@ -66,15 +69,28 @@
         
         if (universalBall.position.y >= self.frame.size.height-universalBall.size.height && restartGameButtonAdded == NO) {
             SKLabelNode *restartGame = [SKLabelNode labelNodeWithFontNamed:@"Futura Medium"];
+            restartGame.name = @"RestartGameNode";
             restartGame.text = @"Restart Game";
-            restartGame.fontSize = 30.0;
-            restartGame.color = [SKColor greenColor];
-            NSLog(@"Color %@ ", restartGame.color);
+            restartGame.fontSize = 40.0;
+            restartGame.fontColor = [SKColor blackColor];
             restartGame.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)-restartGame.frame.size.height*2);
             [self addChild:restartGame];
             restartGameButtonAdded = YES;
         }
-//        
+
+        
+        
+        NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+        for (SKNode *node in nodes) {
+            if ([node.name isEqualToString:@"RestartGameNode"]) {
+                [self removeAllChildren];
+                restartGameButtonAdded = NO;
+            }
+            
+        }
+
+        
+//
 //        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
 //        
 //        sprite.xScale = 0.5;
