@@ -10,10 +10,12 @@
 
 @implementation GameScene {
     SKSpriteNode *universalBall;
+    BOOL restartGameButtonAdded;
 }
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
+    restartGameButtonAdded = NO;
     
     self.backgroundColor = [SKColor whiteColor];
     
@@ -62,9 +64,15 @@
         // Adding to view
         [self addChild:universalBall];
         
-        if (universalBall.position.y >= self.frame.size.height-universalBall.size.height) {
-            SKLabelNode *restartGame = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next"];
-            restartGame = [SKLabelNode labelNodeWithText:@"Restart Game"];
+        if (universalBall.position.y >= self.frame.size.height-universalBall.size.height && restartGameButtonAdded == NO) {
+            SKLabelNode *restartGame = [SKLabelNode labelNodeWithFontNamed:@"Futura Medium"];
+            restartGame.text = @"Restart Game";
+            restartGame.fontSize = 30.0;
+            restartGame.color = [SKColor greenColor];
+            NSLog(@"Color %@ ", restartGame.color);
+            restartGame.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)-restartGame.frame.size.height*2);
+            [self addChild:restartGame];
+            restartGameButtonAdded = YES;
         }
 //        
 //        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
