@@ -8,37 +8,76 @@
 
 #import "GameScene.h"
 
-@implementation GameScene
+@implementation GameScene {
+    SKSpriteNode *universalBall;
+}
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     
-    myLabel.text = @"Hello, World!";
-    myLabel.fontSize = 65;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
+    self.backgroundColor = [SKColor whiteColor];
     
-    [self addChild:myLabel];
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+
+    
+    
 }
+
+-(void)addBall{
+    
+}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
+        // Creating a ball
+        NSArray *balls = @[@"8Ball",@"BeachBall",@"SoccerBall"];
+        NSInteger randBall = (NSInteger)(arc4random_uniform(3));
+        universalBall = [[SKSpriteNode alloc] initWithImageNamed:balls[randBall]];
+        universalBall.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:universalBall.frame.size.width/2];
+        switch (randBall) {
+            case 0:
+                universalBall.physicsBody.restitution = 0;
+                universalBall.physicsBody.linearDamping = 0.2;
+                universalBall.physicsBody.friction = 1.0;
+                break;
+            case 1:
+                universalBall.physicsBody.restitution = 0.7;
+                universalBall.physicsBody.linearDamping = 0.1;
+                universalBall.physicsBody.friction = 0.5;
+                break;
+            case 2:
+                universalBall.physicsBody.restitution = 0.9;
+                universalBall.physicsBody.linearDamping = 0.1;
+                universalBall.physicsBody.friction = 0.5;
+                break;
+            default:
+                break;
+        }
+        // Setting position
+        universalBall.position = location;
+        // Adding to view
+        [self addChild:universalBall];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.xScale = 0.5;
-        sprite.yScale = 0.5;
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+        if (universalBall.position.y >= self.frame.size.height-universalBall.size.height) {
+            SKLabelNode *restartGame = [SKLabelNode labelNodeWithFontNamed:@"Avenir Next"];
+            restartGame = [SKLabelNode labelNodeWithText:@"Restart Game"];
+        }
+//        
+//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+//        
+//        sprite.xScale = 0.5;
+//        sprite.yScale = 0.5;
+//        sprite.position = location;
+//        
+//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
+//        
+//        [sprite runAction:[SKAction repeatActionForever:action]];
+//        
+//        [self addChild:sprite];
     }
 }
 

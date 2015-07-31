@@ -16,6 +16,10 @@
 		AAB15E431B6BE70C0009B161 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E421B6BE70C0009B161 /* Images.xcassets */; };
 		AAB15E461B6BE70C0009B161 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E441B6BE70C0009B161 /* LaunchScreen.xib */; };
 		AAB15E521B6BE70C0009B161 /* ballGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB15E511B6BE70C0009B161 /* ballGameTests.m */; };
+		AAB15E5C1B6BE7AC0009B161 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5B1B6BE7AC0009B161 /* Entitlements.plist */; };
+		AAB15E601B6BE9850009B161 /* 8Ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5D1B6BE9850009B161 /* 8Ball@2x.png */; };
+		AAB15E611B6BE9850009B161 /* BeachBall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5E1B6BE9850009B161 /* BeachBall@2x.png */; };
+		AAB15E621B6BE9850009B161 /* SoccerBall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5F1B6BE9850009B161 /* SoccerBall@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		AAB15E4B1B6BE70C0009B161 /* ballGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ballGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB15E501B6BE70C0009B161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAB15E511B6BE70C0009B161 /* ballGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ballGameTests.m; sourceTree = "<group>"; };
+		AAB15E5B1B6BE7AC0009B161 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		AAB15E5D1B6BE9850009B161 /* 8Ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8Ball@2x.png"; sourceTree = "<group>"; };
+		AAB15E5E1B6BE9850009B161 /* BeachBall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BeachBall@2x.png"; sourceTree = "<group>"; };
+		AAB15E5F1B6BE9850009B161 /* SoccerBall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SoccerBall@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 				AAB15E2F1B6BE70C0009B161 /* ballGame */,
 				AAB15E4E1B6BE70C0009B161 /* ballGameTests */,
 				AAB15E2E1B6BE70C0009B161 /* Products */,
+				AAB15E641B6BE9980009B161 /* Supplied images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				AAB15E311B6BE70C0009B161 /* Info.plist */,
+				AAB15E5B1B6BE7AC0009B161 /* Entitlements.plist */,
 				AAB15E321B6BE70C0009B161 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -125,6 +135,16 @@
 				AAB15E501B6BE70C0009B161 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAB15E641B6BE9980009B161 /* Supplied images */ = {
+			isa = PBXGroup;
+			children = (
+				AAB15E5D1B6BE9850009B161 /* 8Ball@2x.png */,
+				AAB15E5E1B6BE9850009B161 /* BeachBall@2x.png */,
+				AAB15E5F1B6BE9850009B161 /* SoccerBall@2x.png */,
+			);
+			name = "Supplied images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +227,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB15E621B6BE9850009B161 /* SoccerBall@2x.png in Resources */,
 				AAB15E461B6BE70C0009B161 /* LaunchScreen.xib in Resources */,
 				AAB15E431B6BE70C0009B161 /* Images.xcassets in Resources */,
 				AAB15E3B1B6BE70C0009B161 /* GameScene.sks in Resources */,
+				AAB15E611B6BE9850009B161 /* BeachBall@2x.png in Resources */,
+				AAB15E5C1B6BE7AC0009B161 /* Entitlements.plist in Resources */,
+				AAB15E601B6BE9850009B161 /* 8Ball@2x.png in Resources */,
 				AAB15E411B6BE70C0009B161 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +314,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = ballGame/Entitlements.plist;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -333,7 +359,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = ballGame/Entitlements.plist;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

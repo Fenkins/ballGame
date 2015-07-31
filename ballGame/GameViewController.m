@@ -45,6 +45,9 @@
     GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
+    // This will set the scene size to the size of the phone screen
+    scene.size = skView.bounds.size;
+    
     // Present the scene.
     [skView presentScene:scene];
 }
