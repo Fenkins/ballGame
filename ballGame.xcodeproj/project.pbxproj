@@ -21,6 +21,7 @@
 		AAB15E611B6BE9850009B161 /* BeachBall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5E1B6BE9850009B161 /* BeachBall@2x.png */; };
 		AAB15E621B6BE9850009B161 /* SoccerBall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5F1B6BE9850009B161 /* SoccerBall@2x.png */; };
 		AAB8C4801B6EAD1E00A4A6C6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB8C47F1B6EAD1E00A4A6C6 /* CoreMotion.framework */; };
+		AAB8C4821B6EBFA100A4A6C6 /* restartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB8C4811B6EBFA100A4A6C6 /* restartButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		AAB15E5E1B6BE9850009B161 /* BeachBall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BeachBall@2x.png"; sourceTree = "<group>"; };
 		AAB15E5F1B6BE9850009B161 /* SoccerBall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SoccerBall@2x.png"; sourceTree = "<group>"; };
 		AAB8C47F1B6EAD1E00A4A6C6 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		AAB8C4811B6EBFA100A4A6C6 /* restartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restartButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				AAB15E5D1B6BE9850009B161 /* 8Ball@2x.png */,
 				AAB15E5E1B6BE9850009B161 /* BeachBall@2x.png */,
 				AAB15E5F1B6BE9850009B161 /* SoccerBall@2x.png */,
+				AAB8C4811B6EBFA100A4A6C6 /* restartButton.png */,
 			);
 			name = "Supplied images";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				AAB15E461B6BE70C0009B161 /* LaunchScreen.xib in Resources */,
 				AAB15E431B6BE70C0009B161 /* Images.xcassets in Resources */,
 				AAB15E3B1B6BE70C0009B161 /* GameScene.sks in Resources */,
+				AAB8C4821B6EBFA100A4A6C6 /* restartButton.png in Resources */,
 				AAB15E611B6BE9850009B161 /* BeachBall@2x.png in Resources */,
 				AAB15E5C1B6BE7AC0009B161 /* Entitlements.plist in Resources */,
 				AAB15E601B6BE9850009B161 /* 8Ball@2x.png in Resources */,

@@ -10,14 +10,11 @@
 
 @implementation GameScene {
     SKSpriteNode *universalBall;
-    BOOL restartGameButtonAdded;
     CMMotionManager *motionManager;
 }
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
-    restartGameButtonAdded = NO;
-    
     self.backgroundColor = [SKColor whiteColor];
     
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
@@ -68,24 +65,18 @@
         // Adding to view
         [self addChild:universalBall];
         
-        if (universalBall.position.y >= self.frame.size.height-universalBall.size.height && restartGameButtonAdded == NO) {
-            SKLabelNode *restartGame = [SKLabelNode labelNodeWithFontNamed:@"Futura Medium"];
-            restartGame.name = @"RestartGameNode";
-            restartGame.text = @"Restart Game";
-            restartGame.fontSize = 40.0;
-            restartGame.fontColor = [SKColor blackColor];
-            restartGame.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)-restartGame.frame.size.height*2);
-            [self addChild:restartGame];
-            restartGameButtonAdded = YES;
-        }
-
+        SKSpriteNode *restartGame = [SKSpriteNode spriteNodeWithImageNamed:@"restartButton"];
+        restartGame.xScale = 0.5;
+        restartGame.yScale = 0.5;
+        restartGame.name = @"RestartGameNode";
+        restartGame.position = CGPointMake(CGRectGetMaxX(self.frame)-restartGame.frame.size.width, CGRectGetMaxY(self.frame)-restartGame.frame.size.height);
+        [self addChild:restartGame];
         
         
         NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
         for (SKNode *node in nodes) {
             if ([node.name isEqualToString:@"RestartGameNode"]) {
                 [self removeAllChildren];
-                restartGameButtonAdded = NO;
             }
             
         }
