@@ -11,6 +11,7 @@
 @implementation GameScene {
     SKSpriteNode *universalBall;
     BOOL restartGameButtonAdded;
+    CMMotionManager *motionManager;
 }
 
 -(void)didMoveToView:(SKView *)view {
@@ -51,13 +52,13 @@
                 universalBall.physicsBody.restitution = 0.7;
                 universalBall.physicsBody.linearDamping = 0.1;
                 universalBall.physicsBody.friction = 0.5;
-                universalBall.physicsBody.mass = 0.1;
+                universalBall.physicsBody.mass = 0.05;
                 break;
             case 2:
                 universalBall.physicsBody.restitution = 0.9;
                 universalBall.physicsBody.linearDamping = 0.1;
                 universalBall.physicsBody.friction = 0.5;
-                universalBall.physicsBody.mass = 0.3;
+                universalBall.physicsBody.mass = 0.1;
                 break;
             default:
                 break;
@@ -88,25 +89,19 @@
             }
             
         }
-
-        
-//
-//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-//        
-//        sprite.xScale = 0.5;
-//        sprite.yScale = 0.5;
-//        sprite.position = location;
-//        
-//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-//        
-//        [sprite runAction:[SKAction repeatActionForever:action]];
-//        
-//        [self addChild:sprite];
     }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    if (motionManager == nil) {
+        motionManager = [[CMMotionManager alloc]init];
+        motionManager.deviceMotionUpdateInterval = 0.025;
+        [motionManager startDeviceMotionUpdates];
+    }
+    
+    CMAcceleration gravity = motionManager.deviceMotion.gravity;
+    self.physicsWorld.gravity = CGVectorMake(gravity.x * 9.8, gravity.y * 9.8);
 }
 
 @end

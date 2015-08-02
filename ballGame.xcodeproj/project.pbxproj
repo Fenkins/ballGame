@@ -20,6 +20,7 @@
 		AAB15E601B6BE9850009B161 /* 8Ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5D1B6BE9850009B161 /* 8Ball@2x.png */; };
 		AAB15E611B6BE9850009B161 /* BeachBall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5E1B6BE9850009B161 /* BeachBall@2x.png */; };
 		AAB15E621B6BE9850009B161 /* SoccerBall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB15E5F1B6BE9850009B161 /* SoccerBall@2x.png */; };
+		AAB8C4801B6EAD1E00A4A6C6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB8C47F1B6EAD1E00A4A6C6 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		AAB15E5D1B6BE9850009B161 /* 8Ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8Ball@2x.png"; sourceTree = "<group>"; };
 		AAB15E5E1B6BE9850009B161 /* BeachBall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BeachBall@2x.png"; sourceTree = "<group>"; };
 		AAB15E5F1B6BE9850009B161 /* SoccerBall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SoccerBall@2x.png"; sourceTree = "<group>"; };
+		AAB8C47F1B6EAD1E00A4A6C6 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB8C4801B6EAD1E00A4A6C6 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,7 @@
 		AAB15E241B6BE70C0009B161 = {
 			isa = PBXGroup;
 			children = (
+				AAB8C47F1B6EAD1E00A4A6C6 /* CoreMotion.framework */,
 				AAB15E2F1B6BE70C0009B161 /* ballGame */,
 				AAB15E4E1B6BE70C0009B161 /* ballGameTests */,
 				AAB15E2E1B6BE70C0009B161 /* Products */,
@@ -454,6 +458,7 @@
 				AAB15E571B6BE70C0009B161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAB15E581B6BE70C0009B161 /* Build configuration list for PBXNativeTarget "ballGameTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +467,7 @@
 				AAB15E5A1B6BE70C0009B161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

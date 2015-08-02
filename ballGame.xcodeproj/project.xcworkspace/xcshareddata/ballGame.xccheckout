@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EFE9102A-C5E4-4854-8511-7F1C095D0264</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ballGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2035C683CEB6DC90BDE151DEB3FB7FEC989EFAB2</key>
 		<string>https://github.com/Fenkins/ballGame.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ballGame.xcodeproj/project.xcworkspace</string>
+	<string>ballGame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2035C683CEB6DC90BDE151DEB3FB7FEC989EFAB2</key>
