@@ -11,6 +11,7 @@
 @implementation GameScene {
     SKSpriteNode *universalBall;
     CMMotionManager *motionManager;
+    BOOL restartButtonAdded;
 }
 
 -(void)didMoveToView:(SKView *)view {
@@ -18,7 +19,8 @@
     self.backgroundColor = [SKColor whiteColor];
     
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-
+    
+    restartButtonAdded = NO;
     
     
 }
@@ -65,18 +67,22 @@
         // Adding to view
         [self addChild:universalBall];
         
-        SKSpriteNode *restartGame = [SKSpriteNode spriteNodeWithImageNamed:@"restartButton"];
-        restartGame.xScale = 0.5;
-        restartGame.yScale = 0.5;
-        restartGame.name = @"RestartGameNode";
-        restartGame.position = CGPointMake(CGRectGetMaxX(self.frame)-restartGame.frame.size.width, CGRectGetMaxY(self.frame)-restartGame.frame.size.height);
-        [self addChild:restartGame];
+        if (restartButtonAdded == NO) {
+            SKSpriteNode *restartGame = [SKSpriteNode spriteNodeWithImageNamed:@"restartButton"];
+            restartGame.xScale = 0.5;
+            restartGame.yScale = 0.5;
+            restartGame.name = @"RestartGameNode";
+            restartGame.position = CGPointMake(CGRectGetMaxX(self.frame)-restartGame.frame.size.width, CGRectGetMaxY(self.frame)-restartGame.frame.size.height);
+            [self addChild:restartGame];
+            restartButtonAdded = YES;
+        }
         
         
         NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
         for (SKNode *node in nodes) {
             if ([node.name isEqualToString:@"RestartGameNode"]) {
                 [self removeAllChildren];
+                restartButtonAdded = NO;
             }
             
         }
